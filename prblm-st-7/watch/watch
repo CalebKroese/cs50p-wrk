@@ -1,0 +1,37 @@
+import re
+import sys
+
+
+def main():
+    print(parse(input("HTML: ")))
+
+
+def parse(s):
+    """
+    Parse HTML (string) looking for an iframe src that points to a YouTube embed URL,
+    and return the corresponding https://youtu.be/<id> URL, or None if not found.
+    """
+    # regex explanation:
+    # <iframe[^>]*            -> match an <iframe ... up to attrs (non-greedy)
+    # src="                   -> find src="
+    # https?://               -> http or https
+    # (?:www\.)?              -> optional www.
+    # youtube\.com/embed/     -> the embed path
+    # ([A-Za-z0-9_-]+)        -> capture the video id (letters, digits, - or _)
+    # (?:\?[^"]*)?            -> optional query string up to the next quote
+    # "                       -> closing quote of src attribute
+    pattern = re.compile(
+        r'<iframe[^>]*src="https?://(?:www\.)?youtube\.com/embed/([A-Za-z0-9_-]+)(?:\?[^"]*)?"',
+        re.IGNORECASE,
+    )
+
+    match = pattern.search(s)
+    if not match:
+        return None
+
+    video_id = match.group(1)
+    return f"https://youtu.be/{video_id}"
+
+
+if __name__ == "__main__":
+    main()

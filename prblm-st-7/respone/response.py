@@ -1,0 +1,13 @@
+import validators
+
+
+def main():
+    email = input("What's your email adress? ")
+    if validators.email(email):
+        print("valid")
+    else:
+        print("Invalid")
+
+
+if __name__ == "__main__":
+    main()
