@@ -1,5 +1,11 @@
-# Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
-name = input("What's your name? ").strip().title()
+def main():
+    name = input("What's your name? ")
+    print(hello(name))
 
-# Print the output
-print(f"hello, {name}")
+
+def hello(to="world"):
+    return f"hello, {to}"
+
+
+if __name__ == "__main__":
+    main()
