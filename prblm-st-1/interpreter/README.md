@@ -1,42 +1,40 @@
-Simple Arithmetic Expression Evaluator
+# File Extension to Media Type Identifier
 
-Description
+## Description
+This Python program determines the **MIME type** (media type) of a file based on its extension.
+It’s a practical example of using **dictionaries**, **string methods**, and **looping** to map file types to their correct media identifiers — commonly used in web development and file handling.
 
-This Python program acts as a basic calculator that evaluates simple arithmetic expressions entered by the user. It supports addition, subtraction, multiplication, and division using clean and readable Python syntax.
+---
 
+## How It Works
+1. The program prompts the user to enter a filename (e.g. `photo.jpg` or `document.pdf`).
+2. It removes any leading/trailing whitespace and converts the input to lowercase.
+3. It compares the file’s extension against a predefined dictionary of known file types.
+4. If a match is found, it prints the corresponding **MIME type**.
+5. If no match is found, it defaults to `application/octet-stream`, a general-purpose binary type.
 
+---
 
-How It Works
+## Example Usage
 
-The program prompts the user to enter an expression (e.g. 3 + 4 or 10 / 2).
+### Input:
+File name: picture.JPG
 
-It removes extra spaces using .strip() and splits the input into three parts:
-    x → the first number
-    y → the operator
-    z → the second number
+### Output:
+image/jpeg
 
-It converts the numbers to integers and performs the correct operation based on the operator.
+---
 
-The result is displayed, formatted to one decimal place.
+### Input:
+File name: notes.txt
 
+### Output:
+text/plain
 
+---
 
-Example Usage
+### Input:
+File name: archive.unknown
 
-Input:
-Expression: 3 + 5
-
-Output:
-8.0
-
-Input:
-Expression: 10 / 4
-
-Output:
-2.5
-
-Input:
-Expression: 7 - 2
-
-Output:
-5.0
+### Output:
+application/octet-stream
