@@ -11,8 +11,11 @@ the Buget Manager is a Python command-line app that helps user track income, exp
 Features:
 
 -Add income or expenses transactions
+
 -Auto-categorize spending
+
 -View total balance instantly
+
 -Generate summeries by categoy -Export a styled PDF -report (with income in green and exenses in red)
 
 Files:
